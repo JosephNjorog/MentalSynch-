@@ -67,131 +67,44 @@ MindMorph is an integrated health and wellness platform that combines AI-powered
 
 - **Mobile Development**
   - **Frameworks**: React Native
-    - **Reason**: React Native is chosen for its alignment with React (frontend choice) and ease of use for building cross-platform applications, ensuring a seamless development process.
+    - **Reason**: React Native is chosen for its alignment with React (frontend choice) and ease of
+
+ cross-platform mobile development, reducing the time and effort needed to develop both iOS and Android applications.
 
 - **Analytics and Visualization**
   - **Tools**: D3.js
-    - **Reason**: D3.js is selected for its powerful capabilities in creating complex and interactive visualizations, which are essential for the integrated health dashboard.
+    - **Reason**: D3.js is selected for its powerful data visualization capabilities, enabling the creation of detailed and interactive progress reports.
 
 - **API Integration**
   - **Wearables**: Fitbit API, Apple HealthKit, Google Fit
-    - **Reason**: Fitbit API is chosen initially for its extensive user base, with plans to expand to Apple HealthKit and Google Fit for broader compatibility and comprehensive health data integration.
-<<<<<<< HEAD
+    - **Reason**: These APIs are chosen for their widespread use and ease of integration, allowing for comprehensive health monitoring through popular wearable devices.
 
 ## **Project Structure**
-
-```
-MindMorph/
-├── backend/
-│   ├── config/
-│   │   ├── config.js
-│   │   └── database.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── chatController.js
-│   │   └── physioController.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── ChatSession.js
-│   │   └── PhysioSession.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── chatRoutes.js
-│   │   └── physioRoutes.js
-│   ├── middleware/
-│   │   ├── authMiddleware.js
-│   │   └── errorMiddleware.js
-│   ├── services/
-│   │   ├── aiService.js
-│   │   ├── vrService.js
-│   │   └── userService.js
-│   ├── utils/
-│   │   ├── logger.js
-│   │   └── validator.js
-│   ├── .env
-│   ├── app.js
-│   ├── package.json
-│   └── README.md
-├── frontend/
-│   ├── public/
-│   │   ├── index.html
-│   │   └── manifest.json
-│   ├── src/
-│   │   ├── assets/
-│   │   │   ├── images/
-│   │   │   └── styles/
-│   │   │       ├── main.css
-│   │   │       └── variables.css
-│   │   ├── components/
-│   │   │   ├── Chatbot/
-│   │   │   │   ├── Chatbot.js
-│   │   │   │   └── Chatbot.css
-│   │   │   ├── Dashboard/
-│   │   │   │   ├── Dashboard.js
-│   │   │   │   └── Dashboard.css
-│   │   │   ├── Navbar/
-│   │   │   │   ├── Navbar.js
-│   │   │   │   └── Navbar.css
-│   │   │   ├── Physio/
-│   │   │   │   ├── Physio.js
-│   │   │   │   └── Physio.css
-│   │   │   └── Shared/
-│   │   │       ├── Button.js
-│   │   │       └── Input.js
-│   │   ├── contexts/
-│   │   │   ├── AuthContext.js
-│   │   │   └── UserContext.js
-│   │   ├── hooks/
-│   │   │   ├── useAuth.js
-│   │   │   └── useFetch.js
-│   │   ├── pages/
-│   │   │   ├── HomePage.js
-│   │   │   ├── LoginPage.js
-│   │   │   ├── RegisterPage.js
-│   │   │   ├── ChatbotPage.js
-│   │   │   ├── PhysioPage.js
-│   │   │   └── DashboardPage.js
-│   │   ├── services/
-│   │   │   ├── api.js
-│   │   │   ├── authService.js
-│   │   │   └── userService.js
-│   │   ├── utils/
-│   │   │   ├── helpers.js
-│   │   │   └── constants.js
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── setupTests.js
-│   ├── .env
-│   ├── package.json
-│   └── README.md
-├── .gitignore
-├── LICENSE
-└── README.md
-```
 
 ### **Backend**
 
 - **`config/`**: Configuration files
-  - `config.js`: General app configurations.
-  - `database.js`: Database connection setup.
+  - `config.js`: General configuration.
+  - `database.js`: Database configuration.
 
-- **`controllers/`**: Handles incoming requests and responses
-  - `authController.js`: Authentication-related logic.
-  - `chatController.js`: Handles chat functionalities.
+- **`controllers/`**: Request handlers
+  - `authController.js`: Handles authentication.
+  - `chatController.js`: Manages chatbot interactions.
   - `physioController.js`: Manages physiotherapy sessions.
 
-- **`models/`**: Database schemas and models
+- **`models/`**: Database models
   - `User.js`: User schema.
   - `ChatSession.js`: Chat session schema.
   - `PhysioSession.js`: Physiotherapy session schema.
+  - `localModel.js`: Local pre-trained models schema.
 
-- **`routes/`**: Application routes
-  - `authRoutes.js`: Routes for authentication.
-  - `chatRoutes.js`: Routes for chat functionalities.
-  - `physioRoutes.js`: Routes for physiotherapy.
+- **`routes/`**: API routes
+  - `authRoutes.js`: Authentication routes.
+  - `chatRoutes.js`: Chatbot routes.
+  - `physioRoutes.js`: Physiotherapy routes.
 
-- **`middleware/`**: Middleware for processing requests
-  - `authMiddleware.js`: Handles authentication.
+- **`middleware/`**: Middleware functions
+  - `authMiddleware.js`: Authentication middleware.
   - `errorMiddleware.js`: Error handling middleware.
 
 - **`services/`**: Business logic and external services
@@ -279,8 +192,6 @@ MindMorph/
 - **`.gitignore`**: Specifies files to be ignored by Git.
 - **`LICENSE`**: License for the project.
 - **`README.md`**: General project documentation.
-=======
->>>>>>> 19faa090929fa68f5c318825ac7c9ff4e5e1307b
 
 ## **Installation**
 
@@ -353,13 +264,8 @@ MindMorph/
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## **Contact**
+
 JosephNjorog  
 Email: njorojoe11173@gmail.com
-=======
-For any questions or feedback, please contact:
-- **Joseph Njoroge**
-- **Email:** njorojoe11173@gmail.com
-- **GitHub:** [JosephNjorog](https://github.com/JosephNjorog)
-
 
 ---
