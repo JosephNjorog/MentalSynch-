@@ -353,8 +353,6 @@ MindMorph/
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## **Contact**
-<<<<<<< HEAD
-
 JosephNjorog  
 Email: njorojoe11173@gmail.com
 =======
@@ -362,6 +360,6 @@ For any questions or feedback, please contact:
 - **Joseph Njoroge**
 - **Email:** njorojoe11173@gmail.com
 - **GitHub:** [JosephNjorog](https://github.com/JosephNjorog)
->>>>>>> 19faa090929fa68f5c318825ac7c9ff4e5e1307b
+
 
 ---
