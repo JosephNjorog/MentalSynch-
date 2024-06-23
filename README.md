@@ -41,25 +41,40 @@ MindMorph is an integrated health and wellness platform that combines AI-powered
 
 ## **Technology Stack**
 - **AI Development**
-  - NLP Frameworks: TensorFlow, PyTorch, spaCy
-  - Chatbot Platforms: Dialogflow, Rasa
+  - **NLP Frameworks**: TensorFlow, Rasa
+    - **Reason**: TensorFlow is chosen for its robust support and extensive resources, making it ideal for building deep learning models. Rasa is selected for its open-source nature and customizability, allowing for tailored chatbot solutions.
+
 - **VR Development**
-  - Engines: Unity3D, Unreal Engine
-  - Hardware: Oculus Quest, HTC Vive
+  - **Engines**: Unity3D, Oculus Quest
+    - **Reason**: Unity3D is chosen for its popularity, extensive asset store, and strong community support, which make it easier to learn and develop with. Oculus Quest is selected for its standalone capability and ease of use, making VR more accessible to a broader audience.
+
 - **Frontend Development**
-  - Frameworks: React, Angular
+  - **Frameworks**: React
+    - **Reason**: React is chosen for its flexibility, large ecosystem, and ease of integration with other libraries, making it suitable for building dynamic and responsive user interfaces.
+
 - **Backend Development**
-  - Frameworks: Node.js, Django
+  - **Frameworks**: Node.js
+    - **Reason**: Node.js is selected for its scalability and real-time capabilities, which are crucial for an interactive platform like MindMorph.
+
 - **Database**
-  - Options: MongoDB, PostgreSQL
+  - **Options**: PostgreSQL
+    - **Reason**: PostgreSQL is chosen for its reliability and ability to handle complex queries, making it ideal for managing user data and analytics.
+
 - **Real-Time Communication**
-  - Frameworks: WebRTC
+  - **Frameworks**: WebRTC
+    - **Reason**: WebRTC is chosen for its robust support for real-time communication, which is crucial for telehealth sessions.
+
 - **Mobile Development**
-  - Frameworks: React Native, Flutter
+  - **Frameworks**: React Native
+    - **Reason**: React Native is chosen for its alignment with React (frontend choice) and ease of use for building cross-platform applications, ensuring a seamless development process.
+
 - **Analytics and Visualization**
-  - Tools: D3.js, Chart.js
+  - **Tools**: D3.js
+    - **Reason**: D3.js is selected for its powerful capabilities in creating complex and interactive visualizations, which are essential for the integrated health dashboard.
+
 - **API Integration**
-  - Wearables: Fitbit API, Apple HealthKit, Google Fit
+  - **Wearables**: Fitbit API, Apple HealthKit, Google Fit
+    - **Reason**: Fitbit API is chosen initially for its extensive user base, with plans to expand to Apple HealthKit and Google Fit for broader compatibility and comprehensive health data integration.
 
 ## **Installation**
 To set up the MindMorph project locally, follow these steps:
@@ -142,8 +157,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## **Contact**
 For any questions or feedback, please contact:
-- **Your Name** Joseph Njoroge Mwangi 
-- **Email:** your.njorojoe11173@gmail.com
+- **Joseph Njoroge**
+- **Email:** njorojoe11173@gmail.com
 - **GitHub:** [JosephNjorog](https://github.com/JosephNjorog)
 
 ---
