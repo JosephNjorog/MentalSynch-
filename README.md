@@ -6,11 +6,12 @@
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Technology Stack](#technology-stack)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
+4. [Project Structure](#project-structure)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
 ## **Project Overview**
 MindMorph is an integrated health and wellness platform that combines AI-powered mental health chatbots with Virtual Reality (VR) physiotherapy. This innovative solution aims to address both mental and physical health issues, offering users a comprehensive care experience from the comfort of their homes.
@@ -75,91 +76,292 @@ MindMorph is an integrated health and wellness platform that combines AI-powered
 - **API Integration**
   - **Wearables**: Fitbit API, Apple HealthKit, Google Fit
     - **Reason**: Fitbit API is chosen initially for its extensive user base, with plans to expand to Apple HealthKit and Google Fit for broader compatibility and comprehensive health data integration.
+<<<<<<< HEAD
+
+## **Project Structure**
+
+```
+MindMorph/
+├── backend/
+│   ├── config/
+│   │   ├── config.js
+│   │   └── database.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── chatController.js
+│   │   └── physioController.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── ChatSession.js
+│   │   └── PhysioSession.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── chatRoutes.js
+│   │   └── physioRoutes.js
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   └── errorMiddleware.js
+│   ├── services/
+│   │   ├── aiService.js
+│   │   ├── vrService.js
+│   │   └── userService.js
+│   ├── utils/
+│   │   ├── logger.js
+│   │   └── validator.js
+│   ├── .env
+│   ├── app.js
+│   ├── package.json
+│   └── README.md
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   └── manifest.json
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   └── styles/
+│   │   │       ├── main.css
+│   │   │       └── variables.css
+│   │   ├── components/
+│   │   │   ├── Chatbot/
+│   │   │   │   ├── Chatbot.js
+│   │   │   │   └── Chatbot.css
+│   │   │   ├── Dashboard/
+│   │   │   │   ├── Dashboard.js
+│   │   │   │   └── Dashboard.css
+│   │   │   ├── Navbar/
+│   │   │   │   ├── Navbar.js
+│   │   │   │   └── Navbar.css
+│   │   │   ├── Physio/
+│   │   │   │   ├── Physio.js
+│   │   │   │   └── Physio.css
+│   │   │   └── Shared/
+│   │   │       ├── Button.js
+│   │   │       └── Input.js
+│   │   ├── contexts/
+│   │   │   ├── AuthContext.js
+│   │   │   └── UserContext.js
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   └── useFetch.js
+│   │   ├── pages/
+│   │   │   ├── HomePage.js
+│   │   │   ├── LoginPage.js
+│   │   │   ├── RegisterPage.js
+│   │   │   ├── ChatbotPage.js
+│   │   │   ├── PhysioPage.js
+│   │   │   └── DashboardPage.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   └── userService.js
+│   │   ├── utils/
+│   │   │   ├── helpers.js
+│   │   │   └── constants.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── setupTests.js
+│   ├── .env
+│   ├── package.json
+│   └── README.md
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+### **Backend**
+
+- **`config/`**: Configuration files
+  - `config.js`: General app configurations.
+  - `database.js`: Database connection setup.
+
+- **`controllers/`**: Handles incoming requests and responses
+  - `authController.js`: Authentication-related logic.
+  - `chatController.js`: Handles chat functionalities.
+  - `physioController.js`: Manages physiotherapy sessions.
+
+- **`models/`**: Database schemas and models
+  - `User.js`: User schema.
+  - `ChatSession.js`: Chat session schema.
+  - `PhysioSession.js`: Physiotherapy session schema.
+
+- **`routes/`**: Application routes
+  - `authRoutes.js`: Routes for authentication.
+  - `chatRoutes.js`: Routes for chat functionalities.
+  - `physioRoutes.js`: Routes for physiotherapy.
+
+- **`middleware/`**: Middleware for processing requests
+  - `authMiddleware.js`: Handles authentication.
+  - `errorMiddleware.js`: Error handling middleware.
+
+- **`services/`**: Business logic and external services
+  - `aiService.js`: Logic for AI functionalities.
+  - `vrService.js`: Logic for VR functionalities.
+  - `userService.js`: User-related business logic.
+
+- **`utils/`**: Utility functions
+  - `logger.js`: Logging utility.
+  - `validator.js`: Validation utility.
+
+- **Root Files**
+  - `.env`: Environment variables.
+  - `app.js`: Main application file.
+  - `package.json`: Dependencies and scripts.
+  - `README.md`: Backend-specific documentation.
+
+### **Frontend**
+
+- **`public/`**: Public assets
+  - `index.html`: Main HTML file.
+  - `manifest.json`: PWA manifest file.
+
+- **`src/`**: Source code
+  - **`assets/`**: Static assets
+    - `images/`: Image files.
+    - `styles/`: Global CSS styles.
+      - `main.css`: Main stylesheet.
+      - `variables.css`: CSS variables.
+
+  - **`components/`**: React components
+    - **`Chatbot/`**: Chatbot component
+      - `Chatbot.js`: Chatbot component logic.
+      - `Chatbot.css`: Chatbot component styles.
+    - **`Dashboard/`**: Dashboard component
+      - `Dashboard.js`: Dashboard component logic.
+      - `Dashboard.css`: Dashboard component styles.
+    - **`Navbar/`**: Navbar component
+      - `Navbar.js`: Navbar component logic.
+      - `Navbar.css`: Navbar component styles.
+    - **`Physio/`**: Physiotherapy component
+      - `Physio.js`: Physiotherapy component logic.
+      - `Physio.css`: Physiotherapy component styles.
+    - **`Shared/`**: Shared reusable components
+      - `Button.js`: Button component.
+      - `Input.js`: Input component.
+
+  - **`contexts/`**: React context API for state management
+    - `AuthContext.js`: Authentication context.
+    - `UserContext.js`: User context.
+
+  - **`hooks/`**: Custom React hooks
+    - `useAuth.js`: Hook for authentication logic.
+    - `useFetch.js`: Hook for data fetching.
+
+  - **`pages/`**: Page components
+    - `HomePage.js`: Home page.
+    - `LoginPage.js`: Login page.
+    - `RegisterPage.js`: Registration page.
+    - `ChatbotPage.js`: Chatbot page.
+    - `PhysioPage.js`: Physiotherapy page.
+    - `DashboardPage.js`: Dashboard page.
+
+  - **`services/`**: Service APIs
+    - `api.js`: General API setup.
+    - `authService.js`: Authentication service.
+    - `userService.js`: User service.
+
+  - **`utils/`**: Utility functions
+    - `helpers.js`: Helper functions.
+    - `constants.js`: Constant values.
+
+  - **Root Files**
+    - `App.js`: Main React component.
+    - `index.js`: Entry point for React application.
+    - `setupTests.js`: Test setup.
+
+- **Root Files**
+  - `.env`: Environment variables.
+  - `package.json`: Dependencies and scripts.
+  - `README.md`: Frontend-specific documentation.
+
+### **Root Level**
+
+- **`.gitignore`**: Specifies files to be ignored by Git.
+- **`LICENSE`**: License for the project.
+- **`README.md`**: General project documentation.
+=======
+>>>>>>> 19faa090929fa68f5c318825ac7c9ff4e5e1307b
 
 ## **Installation**
-To set up the MindMorph project locally, follow these steps:
 
-1. **Clone the Repository:**
-    ```bash
-    git clone https://github.com/JosephNjorog/mindmorph.git
-    cd mindmorph
-    ```
+### **Backend**
 
-2. **Install Backend Dependencies:**
-    ```bash
-    cd backend
-    npm install
-    ```
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/mindmorph.git
+   cd mindmorph/backend
+   ```
 
-3. **Install Frontend Dependencies:**
-    ```bash
-    cd ../frontend
-    npm install
-    ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-4. **Set Up VR Development Environment:**
-    - Ensure Unity3D or Unreal Engine is installed.
-    - Follow the VR hardware setup guides for Oculus Quest or HTC Vive.
+3. Set up environment variables:
+   Create a `.env` file in the `backend` directory with the following variables:
+   ```env
+   NODE_ENV=development
+   PORT=5000
+   DATABASE_URL=your_database_url
+   JWT_SECRET=your_jwt_secret
+   ```
+
+4. Run the backend server:
+   ```sh
+   npm start
+   ```
+
+### **Frontend**
+
+1. Navigate to the frontend directory:
+   ```sh
+   cd ../frontend
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+3. Set up environment variables:
+   Create a `.env` file in the `frontend` directory with the following variables:
+   ```env
+   REACT_APP_API_URL=http://localhost:5000
+   ```
+
+4. Run the frontend development server:
+   ```sh
+   npm start
+   ```
 
 ## **Usage**
-1. **Run the Backend Server:**
-    ```bash
-    cd backend
-    npm start
-    ```
 
-2. **Run the Frontend Application:**
-    ```bash
-    cd frontend
-    npm start
-    ```
-
-3. **Access the Application:**
-   - Open your web browser and navigate to `http://localhost:3000`
-
-4. **VR Development:**
-   - Open the VR project in Unity3D or Unreal Engine.
-   - Ensure the VR headset is connected and configured properly.
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Register a new account or log in with an existing account.
+3. Navigate through the platform to explore its features, including the AI-powered mental health chatbot and VR physiotherapy sessions.
 
 ## **Contributing**
-We welcome contributions from the community! To contribute, please follow these steps:
 
-1. **Fork the Repository:**
-   - Click the "Fork" button at the top right of the repository page.
-
-2. **Clone Your Fork:**
-    ```bash
-    git clone https://github.com/JosephNjorog/mindmorph.git
-    cd mindmorph
-    ```
-
-3. **Create a Branch:**
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-
-4. **Make Your Changes and Commit:**
-    ```bash
-    git add .
-    git commit -m "Add your message here"
-    ```
-
-5. **Push to Your Fork:**
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-
-6. **Create a Pull Request:**
-   - Open your fork on GitHub and click the "New Pull Request" button.
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature-branch-name`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch-name`).
+5. Open a Pull Request.
 
 ## **License**
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## **Contact**
+<<<<<<< HEAD
+
+JosephNjorog  
+Email: njorojoe11173@gmail.com
+=======
 For any questions or feedback, please contact:
 - **Joseph Njoroge**
 - **Email:** njorojoe11173@gmail.com
 - **GitHub:** [JosephNjorog](https://github.com/JosephNjorog)
+>>>>>>> 19faa090929fa68f5c318825ac7c9ff4e5e1307b
 
 ---
-
