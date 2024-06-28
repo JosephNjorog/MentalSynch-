@@ -1,4 +1,4 @@
-# **MindMorph**
+# **MentalSynch**
 
 **Tagline: Holistic Wellness at Your Fingertips**
 
@@ -14,7 +14,7 @@
 9. [Contact](#contact)
 
 ## **Project Overview**
-MindMorph is an integrated health and wellness platform that combines AI-powered mental health chatbots with Virtual Reality (VR) physiotherapy. This innovative solution aims to address both mental and physical health issues, offering users a comprehensive care experience from the comfort of their homes.
+MentalSynch is an integrated health and wellness platform that combines AI-powered mental health chatbots with Virtual Reality (VR) physiotherapy. This innovative solution aims to address both mental and physical health issues, offering users a comprehensive care experience from the comfort of their homes.
 
 ## **Features**
 1. **AI-Powered Mental Health Chatbots**
