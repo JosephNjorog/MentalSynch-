@@ -199,8 +199,8 @@ MentalSynch is an integrated health and wellness platform that combines AI-power
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/mindmorph.git
-   cd mindmorph/backend
+   git clone https://github.com/JosephNjorog/MentalSynch.git
+   cd MentalSynch/backend
    ```
 
 2. Install dependencies:
