@@ -1,0 +1,8 @@
+/* CSS variables for theming */
+:root {
+    --primary-color: #61dafb;
+    --secondary-color: #282c34;
+    --background-color: #f0f0f0;
+    --font-size: 16px;
+  }
+  
