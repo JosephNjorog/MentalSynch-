@@ -1,0 +1,6 @@
+/* Dashboard component styles */
+.dashboard {
+    padding: 2rem;
+    background-color: var(--background-color);
+  }
+  
