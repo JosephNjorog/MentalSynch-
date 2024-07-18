@@ -267,5 +267,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 JosephNjorog  
 Email: njorojoe11173@gmail.com
-
----
