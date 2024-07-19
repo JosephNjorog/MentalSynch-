@@ -1,16 +1,11 @@
-// middleware/errorMiddleware.js
-
+// Error handling middleware
 const errorHandler = (err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send('Something broke!');
+    res.status(err.statusCode || 500).json({
+      success: false,
+      error: err.message || 'Server Error'
+    });
   };
   
-  const notFoundHandler = (req, res, next) => {
-    res.status(404).send('Not Found');
-  };
-  
-  module.exports = {
-    errorHandler,
-    notFoundHandler
-  };
+  module.exports = { errorHandler };
   

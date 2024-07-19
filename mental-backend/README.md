@@ -1,196 +1,294 @@
+To resolve the issues you're facing and update your project, here are the revised and updated files:
+
+### **1. `authRoutes.js`**
+
+Updated to ensure middleware is correctly applied and imports are properly handled.
+
+```javascript
+const express = require('express');
+const router = express.Router();
+const { registerUser, loginUser } = require('../controllers/authController');
+const rateLimiter = require('../middleware/rateLimiter');
+const csrfProtection = require('../middleware/csrfProtection');
+const dataSanitization = require('../middleware/dataSanitization');
+
+// POST /api/auth/register - Register a new user
+router.post('/register', rateLimiter, csrfProtection, dataSanitization, registerUser);
+
+// POST /api/auth/login - Login an existing user
+router.post('/login', rateLimiter, csrfProtection, dataSanitization, loginUser);
+
+module.exports = router;
+```
+
+### **2. `app.js`**
+
+Ensure that all middleware is properly initialized and used.
+
+```javascript
+const express = require('express');
+const mongoose = require('mongoose');
+const helmet = require('helmet');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const { errorHandler } = require('./middleware/errorMiddleware'); // Custom error handler
+
+// Import routes
+const authRoutes = require('./routes/authRoutes');
+const chatRoutes = require('./routes/chatRoutes');
+const physioRoutes = require('./routes/physioRoutes');
+
+const app = express();
+
+// Environment Variables
+require('dotenv').config();
+
+// Middleware
+app.use(cors()); // Allow cross-origin requests
+app.use(helmet()); // Set security headers
+app.use(express.json()); // Parse JSON bodies
+app.use(cookieParser()); // Parse cookies
+
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/chat', chatRoutes);
+app.use('/api/physio', physioRoutes);
+
+// Error Handling Middleware
+app.use(errorHandler); // Handle errors
+
+// Connect to Database and Start Server
+const PORT = process.env.PORT || 5000;
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
+  .catch(err => console.error(err));
+```
+
+### **3. `middleware/errorMiddleware.js`**
+
+Custom error handler for better error management.
+
+```javascript
+// Error handling middleware
+const errorHandler = (err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.statusCode || 500).json({
+    success: false,
+    error: err.message || 'Server Error'
+  });
+};
+
+module.exports = { errorHandler };
+```
+
+### **4. `middleware/csrfProtection.js`**
+
+CSRF protection middleware.
+
+```javascript
+const csrf = require('csurf');
+
+const csrfProtection = csrf({ cookie: true });
+
+module.exports = csrfProtection;
+```
+
+### **5. `middleware/rateLimiter.js`**
+
+Rate limiter to prevent abuse.
+
+```javascript
+const rateLimit = require('express-rate-limit');
+
+const rateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this IP, please try again later.'
+});
+
+module.exports = rateLimiter;
+```
+
+### **6. `middleware/dataSanitization.js`**
+
+Data sanitization middleware.
+
+```javascript
+const mongoSanitize = require('mongo-sanitize');
+
+const dataSanitization = (req, res, next) => {
+  req.body = mongoSanitize(req.body);
+  next();
+};
+
+module.exports = dataSanitization;
+```
+
+### **7. `middleware/authMiddleware.js`**
+
+Authentication middleware placeholder.
+
+```javascript
+const authMiddleware = (req, res, next) => {
+  // Implement authentication logic here
+  next();
+};
+
+module.exports = authMiddleware;
+```
+
+### **8. `package.json`**
+
+Ensure `package.json` is up-to-date with all dependencies and scripts.
+
+```json
+{
+  "name": "mental-backend",
+  "version": "1.0.0",
+  "description": "Backend for the MentalSynch application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^8.5.1",
+    "winston": "^3.13.1",
+    "cors": "^2.8.5" // Add cors dependency
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
+```
+
+### **9. **Example `README.md`** (with updated project structure)
+
+```markdown
 # MentalSynch Backend
 
-The backend server for the MentalSynch application, providing RESTful API endpoints, authentication, and session management.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Directory Structure](#directory-structure)
-- [API Documentation](#api-documentation)
-- [Security Features](#security-features)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-The MentalSynch backend is built with Node.js and Express. It provides the backend services needed for the MentalSynch platform, including user authentication, chatbot interactions, and physiotherapy session management.
-
-## Features
-
-- **User Authentication**: Secure login, registration, and JWT-based authentication.
-- **Chatbot Management**: Handles chatbot interactions and stores chat sessions.
-- **Physiotherapy Session Management**: Manages and stores physiotherapy sessions.
-- **AI Integration**: Interfaces with AI services for chatbot functionality.
-- **VR Integration**: Interfaces with VR services for virtual physiotherapy sessions.
-- **Security**: Includes features like rate limiting, input sanitization, and secure headers.
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14.x or later)
-- MongoDB (v4.x or later)
-
-### Installation
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/mental-backend.git
-   cd mental-backend
-   ```
-
-2. **Install Dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure Environment Variables**
-
-   Create a `.env` file in the root directory and add the following environment variables:
-
-   ```env
-   PORT=5000
-   MONGO_URI=mongodb://localhost:27017/mentalSynch
-   JWT_SECRET=your_jwt_secret
-   ```
-
-4. **Start the Server**
-
-   For development:
-
-   ```bash
-   npm run dev
-   ```
-
-   For production:
-
-   ```bash
-   npm start
-   ```
-
-## Directory Structure
-
-The project follows a modular structure to separate concerns and enhance maintainability. Here is an overview of the directory structure:
+## Project Structure
 
 ```
 mental-backend/
+│
 ├── config/
 │   ├── config.js
 │   └── database.js
+│
 ├── controllers/
 │   ├── authController.js
 │   ├── chatController.js
 │   └── physioController.js
+│
 ├── models/
 │   ├── User.js
 │   ├── ChatSession.js
 │   ├── PhysioSession.js
 │   └── localModel.js
+│
 ├── routes/
 │   ├── authRoutes.js
 │   ├── chatRoutes.js
 │   └── physioRoutes.js
+│
 ├── middleware/
 │   ├── authMiddleware.js
-│   └── errorMiddleware.js
+│   ├── csrfProtection.js
+│   ├── dataSanitization.js
+│   ├── errorMiddleware.js
+│   └── rateLimiter.js
+│
 ├── services/
 │   ├── aiService.js
 │   ├── vrService.js
 │   └── userService.js
+│
 ├── utils/
 │   ├── logger.js
 │   └── validator.js
+│
 ├── .env
 ├── app.js
 ├── package.json
 └── README.md
 ```
 
-- **`config/`**: Contains configuration files.
-  - `config.js`: General configuration settings.
-  - `database.js`: Database configuration and connection setup.
+## Getting Started
 
-- **`controllers/`**: Request handlers for different routes.
-  - `authController.js`: Handles authentication-related requests.
-  - `chatController.js`: Manages chatbot interactions.
-  - `physioController.js`: Manages physiotherapy sessions.
+### Prerequisites
 
-- **`models/`**: Defines database schemas.
-  - `User.js`: User schema and model.
-  - `ChatSession.js`: Chat session schema and model.
-  - `PhysioSession.js`: Physiotherapy session schema and model.
-  - `localModel.js`: Schema for local pre-trained models.
+- Node.js
+- MongoDB
+- npm or yarn
 
-- **`routes/`**: Defines API routes.
-  - `authRoutes.js`: Authentication-related routes.
-  - `chatRoutes.js`: Routes for chatbot interactions.
-  - `physioRoutes.js`: Routes for physiotherapy sessions.
+### Installation
 
-- **`middleware/`**: Contains middleware functions.
-  - `authMiddleware.js`: Middleware for authentication checks.
-  - `errorMiddleware.js`: Middleware for error handling.
-
-- **`services/`**: Contains business logic and integrations.
-  - `aiService.js`: AI functionality and interactions.
-  - `vrService.js`: VR functionality and interactions.
-  - `userService.js`: User-related business logic.
-
-- **`utils/`**: Utility functions and helpers.
-  - `logger.js`: Logging utility for the application.
-  - `validator.js`: Validation functions for requests.
-
-- **Root Files**
-  - `.env`: Environment variables for configuration.
-  - `app.js`: Main application file that sets up and runs the server.
-  - `package.json`: Project dependencies and scripts.
-  - `README.md`: Documentation for the backend.
-
-## API Documentation
-
-Detailed API documentation can be found in the `docs/` directory (create this directory if needed) or can be generated using tools like Swagger or Postman.
-
-## Security Features
-
-- **Rate Limiting**: Prevents abuse by limiting the number of requests from a single IP.
-- **Input Sanitization**: Prevents injection attacks by sanitizing user input.
-- **Secure Headers**: Adds security-related headers to HTTP responses using Helmet.
-- **JWT Authentication**: Secures API endpoints with JSON Web Tokens.
-
-## Testing
-
-1. **Unit Tests**
-
-   Run unit tests using:
+1. Clone the repository:
 
    ```bash
-   npm test
+   git clone https://github.com/yourusername/mental-backend.git
+   cd mental-backend
    ```
 
-2. **Integration Tests**
+2. Install dependencies:
 
-   Ensure integration tests are set up and run them similarly.
+   ```bash
+   npm install
+   ```
 
-## Contributing
+3. Create a `.env` file in the root directory with the following content:
 
-Contributions are welcome! Please open an issue or submit a pull request to the repository.
+   ```env
+   PORT=5000
+   MONGODB_URI=mongodb://localhost:27017/mental-backend
+   ```
 
-## License
+4. Start the application in development mode:
 
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+   ```bash
+   npm run dev
+   ```
+
+5. For production, start the application with:
+
+   ```bash
+   npm start
+   ```
+
+### Folder Structure
+
+- **`config/`**: Contains configuration files for the application and database.
+- **`controllers/`**: Contains request handler functions for various routes.
+- **`models/`**: Contains Mongoose models and schemas.
+- **`routes/`**: Defines API routes and attaches controllers.
+- **`middleware/`**: Contains middleware functions for authentication, rate limiting, and error handling.
+- **`services/`**: Business logic and external services.
+- **`utils/`**: Utility functions such as logging and validation.
+
+### Contributing
+
+Feel free to open issues or submit pull requests to improve the project.
+
+### License
+
+This project is licensed under the ISC License.
 ```
-
-### Key Sections:
-
-- **Directory Structure**: Provides a detailed breakdown of the project’s directory and files.
-- **Getting Started**: Instructions for setting up and running the backend server.
-- **API Documentation**: Placeholder for API documentation.
-- **Security Features**: Details on implemented security measures.
-- **Testing**: Instructions for running tests.
-- **Contributing**: Guidelines for contributing to the project.
-- **License**: Licensing information.
 
