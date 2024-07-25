@@ -1,6 +1,60 @@
-/* Dashboard component styles */
+/* src/components/Dashboard/Dashboard.css */
 .dashboard {
-    padding: 2rem;
-    background-color: var(--background-color);
-  }
-  
+  background-color: var(--background-color);
+  padding: 2rem;
+}
+
+.dashboard h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.quick-actions, .recent-activity {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.action-button {
+  display: block;
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: var(--accent-color);
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.activity-description {
+  margin: 0;
+  font-weight: bold;
+}
+
+.activity-date {
+  font-size: 0.8rem;
+  color: #777;
+}

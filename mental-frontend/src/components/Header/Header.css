@@ -1,0 +1,35 @@
+/* src/components/Header/Header.css */
+.header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container {
+    width: 150px;
+  }
+  
+  .logo {
+    width: 100%;
+    height: auto;
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: var(--secondary-color);
+  }

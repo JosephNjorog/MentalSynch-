@@ -1,0 +1,11 @@
+/* src/styles/variables.css */
+:root {
+    --primary-color: #5B8E7D; /* Soothing green */
+    --secondary-color: #BC9EC1; /* Soft lavender */
+    --accent-color: #F4A259; /* Warm orange */
+    --background-color: #F4F1DE; /* Light cream */
+    --text-color: #2C3E50; /* Dark blue-gray */
+    --error-color: #E76F51; /* Coral red */
+    --success-color: #2A9D8F; /* Teal */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
