@@ -1,4 +1,3 @@
-// components/TreatmentPlan/TreatmentPlan.js
 import React, { useState, useEffect } from 'react';
 import { useApi } from '../../hooks/useApi';
 import './TreatmentPlan.css';
@@ -39,4 +38,9 @@ const TreatmentPlan = () => {
   return (
     <div className="treatment-plan">
       <h2>Your Personalized Treatment Plan</h2>
-      <div className="plan-overview"></div>
+            <div className="plan-overview"></div>
+          </div>
+        );
+      };
+      
+      export default TreatmentPlan;
