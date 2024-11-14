@@ -18,7 +18,7 @@ import HealthInsights from './components/HealthInsights/HealthInsights';
 import TreatmentPlan from './components/TreatmentPlan/TreatmentPlan';
 import WearableIntegration from './components/WearableIntegration/WearableIntegration';
 import Community from './components/Community/Community';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute.js/index.js';
 import './styles/global.css';
 
 function App() {
