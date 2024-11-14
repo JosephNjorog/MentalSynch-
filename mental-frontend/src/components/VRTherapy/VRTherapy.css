@@ -1,0 +1,65 @@
+.vr-interface {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .vr-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .vr-controls button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .vr-controls button:hover {
+    background-color: #0056b3;
+  }
+  
+  .exercise-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .exercise-card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+  }
+  
+  .exercise-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .exercise-card p {
+    margin: 0;
+  }
+  
+  .progress-tracker {
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-bar-inner {
+    height: 20px;
+    background-color: #007bff;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
