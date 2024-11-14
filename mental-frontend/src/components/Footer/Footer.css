@@ -1,0 +1,76 @@
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer .footer-section {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .footer .footer-section.about .logo-text {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .footer .footer-section .contact i {
+    margin-right: 5px;
+  }
+  
+  .footer .footer-section .socials a {
+    margin: 0 10px;
+    color: #fff;
+  }
+  
+  .footer .footer-section .socials a:hover {
+    color: #007bff;
+  }
+  
+  .footer .footer-section.links ul {
+    list-style-type: none;
+  }
+  
+  .footer .footer-section.links ul a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer .footer-section.links ul a:hover {
+    color: #007bff;
+  }
+  
+  .footer .footer-section.contact-form .contact-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+  }
+  
+  .footer .footer-section.contact-form .contact-btn {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .footer .footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+  }
+  
