@@ -5,11 +5,8 @@ const ResultsSummary = ({ answers }) => {
   return (
     <div className="results-summary">
       <h3>Results Summary</h3>
-      <ul>
-        {answers.map((answer, index) => (
-          <li key={index}>{answer}</li>
-        ))}
-      </ul>
+      <p>Question 1: {answers['1']}</p>
+      <p>Question 2: {answers['2']}</p>
     </div>
   );
 };
