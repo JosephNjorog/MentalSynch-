@@ -1,0 +1,48 @@
+.community-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .post-card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .post-card p {
+    margin: 0;
+  }
+  
+  .create-post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .create-post input, .create-post textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .create-post button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-post button:hover {
+    background-color: #0056b3;
+  }
+  
