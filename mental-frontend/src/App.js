@@ -10,7 +10,7 @@ import Register from './pages/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
 import ChatInterface from './components/Chat/ChatInterface.js/index.js';
 import VRInterface from './components/VR/VRInterface.js/index.js';
-import UserProfile from './components/Profile/UserProfile';
+import UserProfile from './components/Profile/UserProfile.js/index.js';
 import MentalHealthAssessment from './pages/MentalHealthAssessment/MentalHealthAssessment';
 import PhysicalHealthAssessment from './pages/PhysicalHealthAssessment/PhysicalHealthAssessment';
 import HealthRecords from './components/HealthRecords/HealthRecords';
