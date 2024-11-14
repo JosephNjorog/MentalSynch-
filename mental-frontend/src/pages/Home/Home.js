@@ -1,7 +1,6 @@
-// src/pages/Home/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import heroImage from '../../assets/images/hero-image.jpg';
+import heroImage from '../../assets/images/MentalSynch Logo.png';
 import './Home.css';
 
 const Home = () => {
