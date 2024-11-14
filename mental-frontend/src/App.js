@@ -1,14 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { ThemeProvider } from './context/ThemeContext';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AuthProvider from './context/AuthContext.js';
+import ThemeProvider from './context/ThemeContext.js/index.js';
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer.js/index.js';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
-import ChatInterface from './components/Chat/ChatInterface';
+import ChatInterface from './components/Chat/ChatInterface.js/index.js';
 import VRInterface from './components/VR/VRInterface';
 import UserProfile from './components/Profile/UserProfile';
 import MentalHealthAssessment from './pages/MentalHealthAssessment/MentalHealthAssessment';
@@ -29,7 +29,7 @@ function App() {
           <div className="App">
             <Header />
             <main className="main-content">
-              <Switch>
+              <Routes>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
@@ -44,7 +44,7 @@ function App() {
                 <PrivateRoute path="/treatment-plan" component={TreatmentPlan} />
                 <PrivateRoute path="/wearable-integration" component={WearableIntegration} />
                 <PrivateRoute path="/community" component={Community} />
-              </Switch>
+              </Routes>
             </main>
             <Footer />
           </div>

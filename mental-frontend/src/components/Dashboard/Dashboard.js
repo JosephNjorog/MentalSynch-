@@ -46,7 +46,7 @@ const Dashboard = () => {
                 <span className="activity-icon">{activity.icon}</span>
                 <div className="activity-content">
                   <p className="activity-description">{activity.description}</p>
-                  <span className="activity-date">{new Date(activity.date).toLocaleDateString()}</span>
+                  <span className="activity-date ref">{new Date(activity.date).toLocaleDateString()}</span>
                 </div>
               </li>
             ))}
