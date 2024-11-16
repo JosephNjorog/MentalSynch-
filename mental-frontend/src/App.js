@@ -21,6 +21,10 @@ import TreatmentPlan from './components/TreatmentPlan/TreatmentPlan';
 import PrivateRoute from './components/PrivateRoute.js';
 import './styles/global.css';
 
+function App() {
+  return (
+    <AuthProvider>
+      <ThemeProvider>
         <Router>
           <div className="App">
             <Header />
