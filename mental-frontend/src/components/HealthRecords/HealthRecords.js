@@ -1,13 +1,13 @@
 // components/HealthRecords/HealthRecords.js
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
-import { useApi } from '../../hooks/useApi';
+import useCustomApi from '../../hooks/useApi';
 import './HealthRecords.css';
 
 const HealthRecords = () => {
   const [physicalHealth, setPhysicalHealth] = useState({});
   const [mentalHealth, setMentalHealth] = useState({});
-  const { get } = useApi();
+  const { get } = useCustomApi();
 
   useEffect(() => {
     const fetchHealthData = async () => {
