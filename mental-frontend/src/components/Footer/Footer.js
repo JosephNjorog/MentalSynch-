@@ -26,4 +26,34 @@ const Footer = () => {
         </div>
 
         <div className="footer-section links">
-  
+          <h2>Quick Links</h2>
+          <ul>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/terms-of-service">Terms of Service</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-section subscribe">
+          <h2>Subscribe</h2>
+          <p>Subscribe to our newsletter to get the latest updates.</p>
+          <form action="#" method="post">
+            <input type="email" name="email" className="text-input" placeholder="Your email address..." />
+            <button type="submit" className="btn btn-big">
+              <i className="fas fa-envelope"></i> Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        &copy; {new Date().getFullYear()} MentalSynch | Designed by MentalSynch Team
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

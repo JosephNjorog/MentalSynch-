@@ -1,9 +1,9 @@
 // src/components/Dashboard/Dashboard.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import HealthMetrics from './HealthMetrics';
-import AppointmentScheduler from './AppointmentScheduler';
-import { useApi } from '../../hooks/useApi';
+// import HealthMetrics from './HealthMetrics';
+// import AppointmentScheduler from './AppointmentScheduler';
+// import { useApi } from '../../hooks/useApi';
 import './Dashboard.css';
 
 const Dashboard = () => {
