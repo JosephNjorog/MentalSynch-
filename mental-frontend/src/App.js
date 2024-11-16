@@ -1,24 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AuthProvider from './context/AuthContext.js';
-import ThemeProvider from './context/ThemeContext.js/index.js';
+import AuthProvider from './context/AuthProvider.js';
+import ThemeProvider from './context/ThemeContext.js';
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer.js/index.js';
+import Footer from './components/Footer/Footer.js';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Dashboard from './components/Dashboard/Dashboard';
-import ChatInterface from './components/Chat/ChatInterface.js/index.js';
-import VRInterface from './components/VR/VRInterface.js/index.js';
-import UserProfile from './components/Profile/UserProfile.js/index.js';
+import ChatInterface from './components/Chat/ChatInterface.js';
+import VRInterface from './components/VR/VRInterface.js';
+import UserProfile from './components/Profile/UserProfile.js';
 import MentalHealthAssessment from './pages/MentalHealthAssessment/MentalHealthAssessment';
 import PhysicalHealthAssessment from './pages/PhysicalHealthAssessment/PhysicalHealthAssessment';
 import HealthRecords from './components/HealthRecords/HealthRecords';
 import HealthInsights from './components/HealthInsights/HealthInsights';
 import TreatmentPlan from './components/TreatmentPlan/TreatmentPlan';
-import WearableIntegration from './components/WearableIntegration/WearableIntegration';
-import Community from './components/Community/Community';
-import PrivateRoute from './components/PrivateRoute.js/index.js';
+// import WearableIntegration from './components/WearableIntegration/WearableIntegration';
+// import Community from './components/Community/Community';
+import PrivateRoute from './components/PrivateRoute.js';
 import './styles/global.css';
 
 function App() {
@@ -42,8 +42,8 @@ function App() {
                 <PrivateRoute path="/health-records" component={HealthRecords} />
                 <PrivateRoute path="/health-insights" component={HealthInsights} />
                 <PrivateRoute path="/treatment-plan" component={TreatmentPlan} />
-                <PrivateRoute path="/wearable-integration" component={WearableIntegration} />
-                <PrivateRoute path="/community" component={Community} />
+                {/* <PrivateRoute path="/wearable-integration" component={WearableIntegration} /> */}
+                {/* <PrivateRoute path="/community" component={Community} /> */}
               </Routes>
             </main>
             <Footer />

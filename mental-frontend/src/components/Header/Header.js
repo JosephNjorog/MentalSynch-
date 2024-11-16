@@ -1,7 +1,7 @@
 // src/components/Header/Header.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/mentalsynch-logo.png';
+import logo from '../../assets/images/MentalSynch Logo.png';
 import './Header.css';
 
 const Header = () => {
