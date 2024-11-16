@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AuthProvider from './context/AuthProvider.js';
-// import ThemeProvider from './context/ThemeContext.js';
+import ThemeProvider from './context/ThemeProvider.js';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer.js';
 import Home from './pages/Home/Home';
@@ -21,10 +21,6 @@ import TreatmentPlan from './components/TreatmentPlan/TreatmentPlan';
 import PrivateRoute from './components/PrivateRoute.js';
 import './styles/global.css';
 
-function App() {
-  return (
-    <AuthProvider>
-      <ThemeProvider>
         <Router>
           <div className="App">
             <Header />

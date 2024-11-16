@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './HealthInsights.css';
+import useCustomApi from '../../hooks/useCustomApi';
 
 const HealthInsights = () => {
   const [insights, setInsights] = useState([]);
-  const { get } = useApi();
+  const { get } = useCustomApi();
 
   useEffect(() => {
     const fetchInsights = async () => {

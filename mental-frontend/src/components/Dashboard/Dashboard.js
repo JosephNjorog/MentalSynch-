@@ -1,14 +1,13 @@
-// src/components/Dashboard/Dashboard.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // import HealthMetrics from './HealthMetrics';
 // import AppointmentScheduler from './AppointmentScheduler';
-// import { useApi } from '../../hooks/useApi';
+import useCustomApi from '../../hooks/useApi';
 import './Dashboard.css';
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
-  const { get } = useApi();
+  const { get } = useCustomApi();
 
   useEffect(() => {
     const fetchUserData = async () => {
