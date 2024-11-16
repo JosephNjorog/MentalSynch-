@@ -1,0 +1,95 @@
+/* HealthInsights.css */
+
+.health-insights {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .health-insights h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .insights-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .insight-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .insight-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .insight-item h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .insight-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .insight-metrics {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .insight-metrics .confidence,
+  .insight-metrics .impact {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .insight-actions {
+    margin-top: 15px;
+  }
+  
+  .insight-actions button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  .insight-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .insight-actions button:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 600px) {
+    .insight-item {
+      padding: 10px;
+    }
+  
+    .insight-actions button {
+      padding: 8px 12px;
+    }
+  
+    .insight-metrics {
+      font-size: 12px;
+    }
+  }
+  

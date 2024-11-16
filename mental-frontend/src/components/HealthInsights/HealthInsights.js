@@ -1,6 +1,4 @@
-// components/HealthInsights/HealthInsights.js
 import React, { useState, useEffect } from 'react';
-import { useApi } from '../../hooks/useApi';
 import './HealthInsights.css';
 
 const HealthInsights = () => {
