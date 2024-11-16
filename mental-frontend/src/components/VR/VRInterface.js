@@ -2,7 +2,7 @@ import React from 'react';
 import VRControls from './VRControls';
 import ExerciseCard from './ExerciseCard';
 import ProgressTracker from './ProgressTracker';
-import './VRTherapy.css';
+import '../VRTherapy/VRTherapy.css';
 
 const VRInterface = () => {
   return (

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useApi } from '../../hooks/useApi';
+import useCustomApi from '../../hooks/useApi';
 import './TreatmentPlan.css';
 
 const TreatmentPlan = () => {
   const [plan, setPlan] = useState(null);
-  const { get, post } = useApi();
+  const { get, post } = useCustomApi();
 
   useEffect(() => {
     const fetchTreatmentPlan = async () => {

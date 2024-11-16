@@ -1,5 +1,5 @@
 import React from 'react';
-import './VRTherapy.css';
+import '../VRTherapy/VRTherapy.css';
 
 const ExerciseCard = ({ exercise }) => {
   return (
