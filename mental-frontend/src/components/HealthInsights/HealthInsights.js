@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HealthInsights.css';
-import useCustomApi from '../../hooks/useCustomApi';
+import useCustomApi from '../../hooks/useApi';
 
 const HealthInsights = () => {
   const [insights, setInsights] = useState([]);

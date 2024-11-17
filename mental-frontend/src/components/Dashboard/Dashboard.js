@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import HealthMetrics from './HealthMetrics';
-// import AppointmentScheduler from './AppointmentScheduler';
+import HealthMetrics from './HealthMetrics';
+import AppointmentScheduler from './AppointmentScheduler';
+
 import useCustomApi from '../../hooks/useApi';
 import './Dashboard.css';
 
