@@ -1,20 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './assets/styles/variables.css';
+import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
-// Register the service worker for production environments
-if (process.env.NODE_ENV === 'production') {
-  serviceWorker.register();
-} else {
-  serviceWorker.unregister();
-}
+// Change this to your service worker registration logic
+serviceWorker.unregister();

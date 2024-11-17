@@ -30,20 +30,20 @@ function App() {
             <Header />
             <main className="main-content">
               <Routes>
-                <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-                <PrivateRoute path="/dashboard" component={Dashboard} />
-                <PrivateRoute path="/chat" component={ChatInterface} />
-                <PrivateRoute path="/vr-therapy" component={VRInterface} />
-                <PrivateRoute path="/profile" component={UserProfile} />
-                <PrivateRoute path="/mental-health-assessment" component={MentalHealthAssessment} />
-                <PrivateRoute path="/physical-health-assessment" component={PhysicalHealthAssessment} />
-                <PrivateRoute path="/health-records" component={HealthRecords} />
-                <PrivateRoute path="/health-insights" component={HealthInsights} />
-                <PrivateRoute path="/treatment-plan" component={TreatmentPlan} />
-                {/* <PrivateRoute path="/wearable-integration" component={WearableIntegration} /> */}
-                {/* <PrivateRoute path="/community" component={Community} /> */}
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<PrivateRoute element={Dashboard} />} />
+                <Route path="/chat" element={<PrivateRoute element={ChatInterface} />} />
+                <Route path="/vr-therapy" element={<PrivateRoute element={VRInterface} />} />
+                <Route path="/profile" element={<PrivateRoute element={UserProfile} />} />
+                <Route path="/mental-health-assessment" element={<PrivateRoute element={MentalHealthAssessment} />} />
+                <Route path="/physical-health-assessment" element={<PrivateRoute element={PhysicalHealthAssessment} />} />
+                <Route path="/health-records" element={<PrivateRoute element={HealthRecords} />} />
+                <Route path="/health-insights" element={<PrivateRoute element={HealthInsights} />} />
+                <Route path="/treatment-plan" element={<PrivateRoute element={TreatmentPlan} />} />
+                {/* <Route path="/wearable-integration" element={<PrivateRoute element={WearableIntegration} />} /> */}
+                {/* <Route path="/community" element={<PrivateRoute element={Community} />} /> */}
               </Routes>
             </main>
             <Footer />
